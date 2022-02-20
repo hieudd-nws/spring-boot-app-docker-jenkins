@@ -21,9 +21,6 @@ pipeline {
             }
         }
         stage('Run docker image and Deploy to local') {
-            environment {
-                DOCKER_HUB_LOGIN = credentials('docker-hub')
-            }
             steps {
                  sh './gradlew dockerRun'
             }
